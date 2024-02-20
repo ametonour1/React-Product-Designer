@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+#  T-Shirt Customization Online Designer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The T-Shirt Customization Online Designer is a web application built using React and fabric.js, designed to provide users with an intuitive platform for customizing T-shirt designs online. With a wide array of features and functionalities, users can personalize their T-shirts with text, images, and various customization options.
 
-## Available Scripts
+##  Key Features:
 
-In the project directory, you can run:
+- ###  Text Customization:
+ Users can add text to their T-shirt designs and customize features such as font family, weight, color, and alignment.
 
-### `npm start`
+- ###  Image Import and Filtering:
+ The application allows users to import images and apply filters to enhance their designs, providing creative flexibility.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ###  SVG Library Integration:
+ Utilizing an extensive SVG library, users can search for and incorporate scalable vector graphics into their designs, expanding the range of customization options.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ###  Undo/Redo Functionality: 
+ The application offers a convenient undo/redo feature, enabling users to easily revert or reapply changes during the design process.
 
-### `npm test`
+- ###  Layer Management:
+ Users can arrange design elements in layers, facilitating organization and control over the design composition.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ###  Express.js Backend:
+ Leveraging Express.js on the backend, the application handles API calls and serves images to the frontend, ensuring efficient data management and retrieval.
 
-### `npm run build`
+- ###  Snapping Feature:
+ One of the standout features of the application is its snapping functionality, which enables precise alignment of objects within the canvas. By analyzing object bounding rectangles and calculating distances between corners, the application automatically aligns objects vertically and horizontally, ensuring perfect symmetry and alignment between design elements.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  How It Works:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ###  Setup:
+ Start by running the frontend of the application with npm run start on localhost:3000. Additionally, launch the backend server with node server.mjs on localhost:4000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ###  Design Creation:
+ Users select a T-shirt template and proceed to add text, images, or SVGs to customize their designs.
 
-### `npm run eject`
+- ###  Customization:
+ With a variety of options available, users can fine-tune their designs, experimenting with fonts, colors, and visual effects.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ###  Alignment:
+ The snapping feature simplifies alignment, allowing users to effortlessly align design elements with precision.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ###  Finalization:
+ Once satisfied, users can preview and save their creations for printing or further adjustments.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The T-Shirt Customization Online Designer offers an interactive and user-friendly platform for individuals to unleash their creativity and design unique T-shirt creations from the comfort of their web browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[productDesignerDemo.webm](https://github.com/ametonour1/React-Product-Designer/assets/108616492/c0dde937-a065-499c-8854-77a792fd1cba)
