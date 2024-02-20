@@ -1,0 +1,164 @@
+:root {
+    --backgroundWhite:rgb(240, 240, 247);
+    --backgroundDarkGray:rgb(25, 26, 26);
+    --backgroundLightGray:rgb(28, 37, 35);
+    --highlightPrimary:rgb(3, 252, 248);
+    --highlightSecondary:rgb(14, 13, 13);
+}
+
+.taskBar{
+    display: flex;
+    overflow: auto;
+    gap: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    width: 100%;
+}
+
+.objectControls{
+    display: flex;
+    gap: 10%;
+    width: 100%;
+
+}
+.taskBarBtn {
+    color: var(--backgroundWhite);
+    background-color: rgb(25, 26, 26);
+    border: none;
+    outline: none;
+    height: 70px;
+    width: 70px;
+    transition: ease-in 2ms;
+}
+
+#taskBtnActive{
+    color:var(--highlightPrimary);
+}
+.taskBarBtn:hover{
+    color: var(--highlightPrimary);
+}
+#toolTipMenu{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipSnap{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipUndo{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipRedo{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipExport{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipLayerUp{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipLayerDown{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipCenter{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipRemove{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+#toolTipClear{
+    background-color:var(--highlightPrimary);
+    font-size: 1rem;
+    display:none;
+    z-index:99;
+}
+
+@media only screen and (min-width: 800px){
+
+    #toolTipMenu{
+       
+        display:block;
+    }
+    #toolTipSnap{
+        display: block;
+    }
+    #toolTipUndo{
+       
+        display:block;
+    }
+    #toolTipRedo{
+        
+        display:block;
+    }
+    #toolTipExport{
+        
+        display:block;
+    }
+    #toolTipLayerUp{
+        
+        display:block;
+    }
+    #toolTipLayerDown{
+        
+        display:block;
+    }
+    #toolTipCenter{
+        
+        display:block;
+    }
+    #toolTipRemove{
+        
+        display:block;
+    }
+    #toolTipClear{
+        
+        display:block;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .taskBar {
+        flex-direction: column;
+        gap: 1%;
+        width: 100%;
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .objectControls{
+        flex-direction: column;
+        gap: 1%;
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .taskBarBtn{
+        height: 60px;
+        width: 60px;
+    }
+}

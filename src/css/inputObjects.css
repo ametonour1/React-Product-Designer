@@ -1,0 +1,9 @@
+
+.test {
+    border: solid red 2px;
+}
+@media only screen and (min-width: 1200px) {
+ .inputObjects{
+    height: 100%;
+ }   
+}

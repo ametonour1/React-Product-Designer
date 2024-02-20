@@ -1,0 +1,216 @@
+:root {
+    --backgroundWhite:rgb(240, 240, 247);
+    --backgroundDarkGray:rgb(25, 26, 26);
+    --backgroundLightGray:rgb(28, 37, 35);
+    --highlightPrimary:rgb(3, 252, 248);
+    --highlightSecondary:rgb(14, 13, 13);
+    --fontSizePrimary:1.5rem;
+    --fontSizeSecondary:1.2rem;
+}
+
+.sidePanelText {
+    background-color: var(--backgroundLightGray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.textControlSlidersDiv{
+    width: 100%;
+   
+}
+.textControlSliders{
+    margin: 2% 2% 2% 2%;
+}
+.textControlLabel{
+    color: var(--backgroundWhite);
+    font-size: var(--fontSizeSecondary);
+}
+.textControlSlider{
+   color: blueviolet;
+}
+.fontFamilySelectorDiv{
+    width: 100%;
+}
+.fontFamilySelector{
+    margin: 2% 2% 2% 2%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#fontSelector{
+    background-color: var(--backgroundDarkGray);
+    border: none;
+    font-size: 1rem;
+    color:var(--backgroundWhite);
+    outline: var(--highlightPrimary);
+}
+.textControlButtonsDiv{
+    width: 100%;
+  
+}
+.textControlButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2% 2% 2% 2%;
+}
+.textControlButton {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    
+}
+.textControlSubButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+    gap: 1rem;
+    
+}
+.uniformButtonActive {
+    background-color: red;
+    font-size: 1rem;
+    width: 100%;
+   padding: 2% 2% 2% 2%;
+   border-radius: 7px;
+   border: none;
+   color: black;
+   background-color: var(--highlightPrimary);
+
+
+}
+.uniformButtonActive:hover{
+    scale: 1.005;
+    transition: ease-in 2ms;
+    background-color:rgb(40, 255, 255)
+}
+.uniformButtonInactive {
+    background-color: aqua;
+    font-size: 1rem;
+  
+   width: 100%;
+   padding: 2% 2% 2% 2%;
+   border-radius: 7px;
+   border: none;
+   color: var(--backgroundWhite);
+   background-color: var(--backgroundDarkGray);
+
+   
+}
+.uniformButtonInactive:hover{
+    scale: 1.005;
+    transition: ease-in 2ms;
+    background-color:var(--highlightSecondary);
+}
+.colorSurfaceControlsDiv{
+    width: 100%;
+}
+.colorSurfaceControls{
+    margin: 2% 2% 2% 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.colorSurfaceSelectorButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    
+}
+.colorSurfaceControlsLabel{
+    font-size: var(--fontSizeSecondary);
+    color: var(--backgroundWhite);
+}
+.colorSlider{
+    margin-bottom: 2%;
+    
+}
+@media only screen and (min-width: 1200px) {
+    .sidePanelText{
+        height: 100%;
+    }
+}
+@media screen and (min-width: 1200px) and (max-height: 800px){
+.sidePanelText{
+  gap: 0;
+  
+}
+#buttonIcons{
+    font-size: 0.7rem;
+}
+.colorSurfaceControlsLabel{
+    font-size: 0.7rem;
+}
+.uniformButtonActive{
+    width: 100%;
+    font-size: 0.7rem;
+}
+.uniformButtonInactive{
+    width: 100%;
+    font-size: 0.7rem;
+
+}
+.textControlLabel{
+    font-size: 0.7rem;
+}
+.fontIcon{
+font-size: 0.5rem;
+}
+.fontFamilySelector{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#fontSelector{
+    font-size: 0.7rem;
+}
+.textControlButtons{
+    gap: 0.2rem;
+}
+.textControlButton{
+    gap: 0;
+}
+
+}
+@media screen and (min-width: 1900px) and (max-height: 1000px) {
+    .sidePanelText{
+        gap: 0;
+        
+      }
+      #buttonIcons{
+          font-size: 0.7rem;
+      }
+      .colorSurfaceControlsLabel{
+          font-size: 0.7rem;
+      }
+      .uniformButtonActive{
+          width: 100%;
+          font-size: 0.7rem;
+      }
+      .uniformButtonInactive{
+          width: 100%;
+          font-size: 0.7rem;
+      
+      }
+      .textControlLabel{
+          font-size: 0.7rem;
+      }
+      .fontIcon{
+      font-size: 0.5rem;
+      }
+      .fontFamilySelector{
+          margin-top: 0;
+          margin-bottom: 0;
+      }
+      #fontSelector{
+          font-size: 0.7rem;
+      }
+      .textControlButtons{
+          gap: 0.2rem;
+      }
+      .textControlButton{
+          gap: 0;
+      }
+}

@@ -1,0 +1,85 @@
+
+:root {
+    --backgroundWhite:rgb(240, 240, 247);
+    --backgroundDarkGray:rgb(25, 26, 26);
+    --backgroundLightGray:rgb(28, 37, 35);
+    --highlightPrimary:rgb(3, 252, 248);
+    --highlightSecondary:rgb(14, 13, 13);
+}
+
+.inputButtons{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--backgroundLightGray)  ;
+}
+.customImageDiv{
+    background-color: var(--backgroundLightGray);
+   
+}
+#imageInput{
+    display:none ;
+}
+.inputLabel {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.uploadPreview {
+    max-width: 100%;
+    height: 15vh;
+    border: dotted var(--backgroundWhite) 2px;
+    padding: 5% 5% 5% 5%;
+}
+.uploadImageIcon {
+    color: var(--backgroundWhite);
+}
+.customImagep {
+    color: var(--backgroundWhite);
+}
+.customImageUpload{
+    height: 30vh;
+    margin:2% 2% 2% 2%;
+    border: dotted var(--backgroundWhite) 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drag-over{
+    border: dotted var(--highlightPrimary) 2px;
+}
+.menuButtonsDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2% 2% 2% 2%;
+}
+.menuBtn{
+    background-color:var(--highlightPrimary);
+    border: none;
+    font-size: 1.1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 7px;
+    color: black;
+    transition: ease-in 2ms;
+}
+.menuBtn:hover{
+    background-color: rgb(34, 253, 253);
+    scale: 1.005;
+}
+
+@media only screen and (min-width: 1200px) {
+    .sidePanelMenu{
+        height: 100%;
+    }
+    .menuBtn{
+        font-size: 1.2rem;
+    }
+    .inputButtons{
+        height: 100%;
+    }
+}
