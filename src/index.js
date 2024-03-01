@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import MainApp from './MainApp';
 import WebFont from 'webfontloader';
 
 WebFont.load({
@@ -32,7 +33,7 @@ WebFont.load({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App />
+    <MainApp />
 
 );
 

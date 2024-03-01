@@ -193,7 +193,7 @@ export const snapingFunction = (newCanvas) => {
         let centralcolor = null
         
         switch (true){
-          case objMiddle > newCanvas.width / 2 - 20 && objMiddle < newCanvas.width / 2 + 20 :
+          case objMiddle > newCanvas.width / 2 - 5 && objMiddle < newCanvas.width / 2 + 5 :
             obj.set({
               left:newCanvas.width / 2 - objScaledWidth /2 
             }).setCoords()
@@ -206,7 +206,7 @@ export const snapingFunction = (newCanvas) => {
            
             addGuideLine(centralx1,centraly1,centralx2,centraly2,centralid,centralcolor,"rr","rr","r")
             break
-          case objMiddleHorizontal > newCanvas.height / 2 - 20 && objMiddleHorizontal < newCanvas.height / 2 + 20  :
+          case objMiddleHorizontal > newCanvas.height / 2 - 5 && objMiddleHorizontal < newCanvas.height / 2 + 5  :
             obj.set({
               top:newCanvas.height/ 2 - objScaledHeight /2 
             }).setCoords()
