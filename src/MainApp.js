@@ -4,11 +4,11 @@ import App from './App'
 import HomePage from './mainComponents/HomePage'
 import Navbar from './mainComponents/navbar/Navbar'
 import NavbarMenu from './mainComponents/navbar/NavbarMenu'
-import SignIn from "./mainComponents/auth/SignIn"
 import CheckOut from "./mainComponents/Checkout/CheckOut"
 import Shop from "./mainComponents/shop/Shop"
 import "./tailwind.css"
 import {motion} from "framer-motion"
+import Auth from './mainComponents/auth/Auth'
 const MainApp = () => {
 
   const [menuToggle,setMenuToggle] = useState(false)
@@ -29,7 +29,7 @@ const MainApp = () => {
         <Route path='/' Component={HomePage}/>
         <Route path='/app' Component={App}/>
         <Route path='/shop' Component={Shop}/>
-        <Route path='/signin' Component={SignIn}/>
+        <Route path='/signin' Component={Auth}/>
         <Route path='/checkout' Component={CheckOut}/>
         </Routes>
         
