@@ -1,6 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import { signUpWithEmailAndPassword, signInUserWithEmailAndPassword,deleteUnVerifedUser } from '../../firebase/firebaseAuth'
 import {useNavigate} from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux'
+import {setTestReducerData} from "../../redux/actions/testAction.js"
+import {login} from "../../redux/actions/authActions.js"
 const SignUp = () => {
 
 
@@ -8,10 +11,17 @@ const SignUp = () => {
   const [userPassword,setUserPassword] = useState(null)
   const [signUpCompleated,setSignUpCompleated] = useState(false)
   const [userVerified,SetUserVerified] = useState(false)
-  const [user,setUser] = useState(null)
   const [error,setError] = useState(null)
   const navigate = useNavigate()
 
+  const dispatch = useDispatch()
+  const activeUser = useSelector((state) => state.auth.user)
+  const isUserLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+
+  useEffect(()=>{
+    console.log(activeUser)
+  dispatch(setTestReducerData("ahhhhhhhhhhh"))
+  },[])
   const redirectHome = () =>{
     if(userVerified){
       navigate("/")
@@ -73,7 +83,7 @@ const SignUp = () => {
         if (signInUser.emailVerified) {
           console.log("userVerifed")
           SetUserVerified(true)
-          setUser(signInUser)
+          dispatch(login(signInUser))
         }else{
           console.log("not verifed yet")
         }

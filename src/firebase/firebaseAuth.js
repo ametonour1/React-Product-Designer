@@ -1,11 +1,12 @@
 import fireBaseApp from "./firebase"
 import "firebase/auth"
-import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,sendEmailVerification, deleteUser} from "firebase/auth";
 
+import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,sendEmailVerification, deleteUser,setPersistence,browserLocalPersistence,signOut} from "firebase/auth";
 const auth = getAuth()
 
 export const signUpWithEmailAndPassword = async (email,password) =>{
     try {
+        await setPersistence(auth,browserLocalPersistence)
         const userCredentials = await createUserWithEmailAndPassword(auth,email,password);
         const user = userCredentials.user
         console.log("errrrrrrrrrrrr",user)
@@ -19,6 +20,7 @@ export const signUpWithEmailAndPassword = async (email,password) =>{
 
 export const signInUserWithEmailAndPassword = async (email,password) =>{
     try {
+        await setPersistence(auth,browserLocalPersistence)
         const userCredentials = await signInWithEmailAndPassword(auth,email,password);
         return userCredentials.user;
     }catch (error) {
@@ -27,9 +29,11 @@ export const signInUserWithEmailAndPassword = async (email,password) =>{
     }
 }
 
-export const signOut = async () => {
+export const signUserOut = async () => {
     try{
-        await fireBaseApp.auth().signOut()
+        await auth.signOut()
+        
+       
     }catch(error){
         console.error("error sighning out",error)
         throw error

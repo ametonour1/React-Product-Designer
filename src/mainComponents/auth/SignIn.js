@@ -1,13 +1,17 @@
 import React,{useState} from 'react'
 import { signInUserWithEmailAndPassword} from '../../firebase/firebaseAuth'
 import ResetPassword from './ResetPassword'
-
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import {login} from "../../redux/actions/authActions"
 const SignIn = () => {
 
     const [emailAddress,setEmailAddress] = useState(null)
     const [userPassword,setUserPassword] = useState(null)
     const [isPasswordReset,setIsPasswordReset] = useState(false)
     const [error,setError] = useState(null)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const handleEmailChange = (event) => {
       setEmailAddress(event.target.value)
       console.log(event.target.value)
@@ -21,6 +25,8 @@ const SignIn = () => {
         try{
             const user = await signInUserWithEmailAndPassword(emailAddress,userPassword)
             console.log("user:",user)
+            dispatch(login(user))
+            navigate("/")
            
         }catch(error){
             let errorMessage = "Something Went Wrong,Please Try Againg"

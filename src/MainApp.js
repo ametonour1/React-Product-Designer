@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route,Routes  } from 'react-router-dom'
 import App from './App'
 import HomePage from './mainComponents/HomePage'
@@ -9,14 +9,23 @@ import Shop from "./mainComponents/shop/Shop"
 import "./tailwind.css"
 import {motion} from "framer-motion"
 import Auth from './mainComponents/auth/Auth'
+import { listenToAuthChanges } from './redux/actions/authActions'
+import { useDispatch, UseDispatch } from 'react-redux'
 const MainApp = () => {
 
   const [menuToggle,setMenuToggle] = useState(false)
   const [animationCompleated,setAnimantionCompleated] = useState(true)
 
+  const dispatch = useDispatch()
   const handleAnimationCompleated = () => {
     setAnimantionCompleated(true)
   }
+
+  useEffect(()=>{
+    dispatch(listenToAuthChanges())
+  },[dispatch])
+
+ 
   return (
     <Router>
      <div className="h-screen flex flex-col ">
