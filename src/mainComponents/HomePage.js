@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import HeroComponent from './HeroComponent'
 
 const HomePage = () => {
   const activeUser = useSelector((state) => state.auth.user)
@@ -9,7 +10,10 @@ const HomePage = () => {
     console.log(activeUser,"jjjjjjjjjjjjjj")
   },[])
   return (
-    <div className=" h-full flex-1">{activeUser?.email}</div>
+    <div className=" bg-backgroundColorPrimary relative h-full flex-1">
+    <HeroComponent/>
+    <p>helloo</p>
+    </div>
   )
 }
 

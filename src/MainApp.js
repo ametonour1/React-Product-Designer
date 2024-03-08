@@ -28,12 +28,12 @@ const MainApp = () => {
  
   return (
     <Router>
-     <div className="h-screen flex flex-col ">
+     <div className="h-screen  flex flex-col ">
         <Navbar 
          menuToggle={menuToggle}
          setMenuToggle={setMenuToggle}
          setAnimantionCompleated={setAnimantionCompleated}/>
-         <div className=" relative flex-1 bg-slate-500">
+         <div className="h-full relative flex-1 bg-slate-500">
         <Routes>
         <Route path='/' Component={HomePage}/>
         <Route path='/app' Component={App}/>
