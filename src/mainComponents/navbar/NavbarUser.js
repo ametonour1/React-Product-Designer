@@ -3,7 +3,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
-import { deepOrange ,lightBlue} from '@mui/material/colors';
+import { deepPurple,lightBlue} from '@mui/material/colors';
 
 
 const NavbarUser = () => {
@@ -30,7 +30,7 @@ const NavbarUser = () => {
         <p className="absolute top-4 left-4 bg-red-700 text-xs w-5 rounded-full flex justify-center items-center">1</p>
         </div>
       </Link>
-      <Avatar sx={{bgcolor:lightBlue[500]}}>{avatarLetter}</Avatar>
+      <Avatar sx={{bgcolor:deepPurple[300]}}>{avatarLetter}</Avatar>
     </div>
   )
 }

@@ -32,10 +32,10 @@ const ResetPassword = ({
       }, [error]);
 
   return (
-    <div>
-         <label >email</label>
-      <input  onChange={handleEmailChange} value ={emailAddress}/>
-      <button onClick={handlePasswordReset} >Reset Password</button>
+    <div className="flex flex-col h-full w-full justify-center items-center gap-5">
+         <label  className="text-xl text-textBaseColor font-bold" >Email Address</label>
+      <input placeholder='example@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" onChange={handleEmailChange} value ={emailAddress}/>
+      <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition'  onClick={handlePasswordReset} >Reset Password</button>
    {error && <p>{error}</p>}
     </div>
   )

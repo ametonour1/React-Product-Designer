@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavbarLogo = () => {
   return (
-    <div>Logo</div>
+    <div className="font-bold text-2xl">Logo</div>
   )
 }
 

@@ -4,11 +4,13 @@ import ResetPassword from './ResetPassword'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {login} from "../../redux/actions/authActions"
+import AuthResetAnimation from '../../animations/AuthResetAnimation'
 const SignIn = () => {
 
     const [emailAddress,setEmailAddress] = useState(null)
     const [userPassword,setUserPassword] = useState(null)
     const [isPasswordReset,setIsPasswordReset] = useState(false)
+    const [awaitPasswordReset,setAwaitPasswordReset] = useState(false)
     const [error,setError] = useState(null)
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -51,28 +53,33 @@ const SignIn = () => {
       const handleIsPasswordReset = () => {
         setIsPasswordReset(!isPasswordReset)
         console.log(isPasswordReset)
+        setTimeout(()=>{
+          setAwaitPasswordReset(!awaitPasswordReset)
+        },300)
       }
 
 
   return (
     <div className=" h-full w-full flex flex-col justify-center items-center">
-      {!isPasswordReset ?
-      <div className=" h-full w-full flex flex-col justify-center  items-center gap-1">
+      {!awaitPasswordReset ?
+      <AuthResetAnimation isPasswordReset={isPasswordReset} >
      <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
-     <label className="text-xl text-gray-800 font-light" >Email</label>
-      <input className="w-full p-2 outline-none border-none rounded-md text-lg text-gray-800"  onChange={handleEmailChange} value ={emailAddress}/>
+     <label className="text-xl text-textBaseColor font-bold" >Email</label>
+      <input placeholder='examle@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor"  onChange={handleEmailChange} value ={emailAddress}/>
      </div>
      <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
-     <label className="text-xl text-gray-800 font-light">Password</label>
-      <input className="w-full p-2 outline-none border-none rounded-md text-lg text-gray-800" type="password" onChange={handlePasswordChange} value ={userPassword}/>
-      <p className="text-xs text-gray-800 font font-light" onClick={handleIsPasswordReset}>I Forgot My Password</p>
+     <label className="text-xl text-textBaseColor font-bold">Password</label>
+      <input placeholder='!1234:)' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" type="password" onChange={handlePasswordChange} value ={userPassword}/>
+      <p className="text-xs text-textBaseColor font font-light" onClick={handleIsPasswordReset}>I Forgot My Password</p>
      </div>
       {error && <p  className="text-xxl">{error}</p>}
-      <button className='text-2xl text-white font-light  bg-blue-700 p-2 w-full hover:scale-105 hover:bg-blue-600 transition' onClick={handleSignIn}>sign in</button>
-      </div>
+      <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition' onClick={handleSignIn}>sign in</button>
+      </AuthResetAnimation>
       :
-      <ResetPassword SetIsPasswordReset={setIsPasswordReset}/> }
-    
+      <AuthResetAnimation isPasswordReset={isPasswordReset}>
+      <ResetPassword SetIsPasswordReset={setIsPasswordReset}/> 
+      </AuthResetAnimation>}
+
   </div>
   )
 }

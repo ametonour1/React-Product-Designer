@@ -5,10 +5,16 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        backgroundColorPrimary:"#EDE6E6",
+        backgroundColorPrimary:"E5E7EB",
         backgroundColorSecondary:"#ebe6e6",
-        textBaseColor:"#0f0f0f",
-        buttonColor:"#4287f5"
+        backgroundColorThird:"#F3F4F6",
+        backgroundColorForth:"##EDE6E6",
+        textBaseColor:"#1F3337",
+        buttonColor:"#1D4ED8",
+        buttonColorHighlight:"#2563EB",
+        textGradientPrimary:"#D42C95",
+        textGradientSecondary:"#C06FBE",
+        textGradientThird:"#83ace2",
         
         
       },
@@ -24,7 +30,9 @@ module.exports = {
         '4xl': '2.25rem',   // 4 times large
         '5xl': '3rem',      // 5 times large
         '6xl': '4rem',      // 6 times large
-        "7xl": "5rem"       // 7 times large
+        "7xl": "5rem" ,      // 7 times large
+        "8xl": "6rem" ,      // 8 times large
+        "9xl": "7rem" ,      // 9 times large
       },
       fontWeight: {
         'hairline': 100,

@@ -9,7 +9,7 @@ import {motion} from "framer-motion"
 
 const HeroComponent = () => {
   return (
-    <div className="flex lg:h-full flex-col-reverse  md:flex-row sm:flex-row lg:flex-row bg-inherit ">
+    <div className="flex xl:h-full  flex-col-reverse  md:flex-row sm:flex-row lg:flex-row bg-inherit ">
     <motion.div 
     initial={{x:-50,opacity:0.5}}
     animate={{x:0,opacity:1,
@@ -22,12 +22,12 @@ const HeroComponent = () => {
     }}}
     
     className='flex-1 flex flex-col justify-center items-center sm:items-start  lg:items-center  gap-2 ml-1 mr-1'>
-        <h1 className="text-4xl sm:text-4xl md:text-6xl font-normal font-mono text-textBaseColor ">Your Design</h1>
-        <h3 className="font-normal text-textBaseColor  font-mono">Design Amazing Custom Products For Your Bussiness With Ease</h3>
-        <button className="bg-blue-700 text-xl p-2 pl-3 pr-3 rounded-lg  font-mono hover:bg-blue-600 transition hover:scale-105 text-white">Start Now</button>
+        <h1 className=" text-5xl text-center sm:text-6xl md:text-8xl xl:text-9xl  bg-gradient-to-r from-textGradientPrimary via-textGradientSecondary to-textGradientThird text-transparent bg-clip-text font-black ">Your Design</h1>
+        <h3 className="font-normal text-textBaseColor  ">Design Amazing Custom Products For Your Bussiness With Ease</h3>
+        <button className="bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary text-xl p-2 pl-3 pr-3 rounded-lg font-bold hover:bg-blue-600 transition hover:scale-105 text-white shadow-md shadow-gray-300">Start Now</button>
     </motion.div>
      <div id='divm' className=" flex-1 grid grid-cols-12 grid-rows-12 h-full ">
-        <img id='divt' className=" row-start-1 row-end-13 col-end-13 col-start-1  lg:h-full flex-1  z-10 " src={TSHIRT}/>
+        <img id='divt' className=" row-start-1 row-end-13 col-end-13 col-start-1  lg:h-full flex-1  z-10   " src={TSHIRT}/>
         <motion.div
         animate={{
           x: [0,15, 10, 0],

@@ -114,15 +114,15 @@ const SignUp = () => {
   },[signUpCompleated,userVerified])
 
   return (
-    <div>
+    <div className="h-full w-full">
       {!signUpCompleated 
       ?
-       <div>
-         <label >email</label>
-      <input  onChange={handleEmailChange} value ={emailAddress}/>
-      <label>password</label>
-      <input type="password" onChange={handlePasswordChange} value ={userPassword}/>
-      <button onClick={handleSignUp}>signUp</button>
+       <div className="h-full w-full flex flex-col justify-around items-center gap-1">
+         <label className="text-xl text-textBaseColor font-bold" >Email</label>
+      <input  placeholder='example@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" onChange={handleEmailChange} value ={emailAddress}/>
+      <label className="text-xl text-textBaseColor font-bold">Password</label>
+      <input placeholder='!1234:)' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" type="password" onChange={handlePasswordChange} value ={userPassword}/>
+      <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition'  onClick={handleSignUp}>Sign Up</button>
       {error && <p  className="text-xxl">{error}</p>}
       </div> 
       : 

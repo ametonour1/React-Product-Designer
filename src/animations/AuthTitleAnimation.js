@@ -21,7 +21,7 @@ const AuthTitleAnimation = ({children ,isSignIn}) => {
         initial={{transformY:0}}
         animate={controls}
         transition={{duration:1.2}} 
-        className=" bg-gray-300 flex flex-col sm:flex-1 gap-2 pt-8 justify-center items-center ">
+        className=" flex flex-col sm:flex-1 gap-2 pt-8 justify-center items-center ">
             {children}
         </motion.div>
     )

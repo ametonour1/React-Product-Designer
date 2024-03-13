@@ -21,7 +21,7 @@ const AuthCardAnimation = ({children,isSignIn}) => {
             perspective: "1000px", // Add perspective
             perspectiveOrigin: "50% 50%" // Adjust perspective origin
         }}
-        className=" h-auto w-full m-5 md:m-20  "
+        className=" h-auto w-full m-5 lg:m-20  "
         initial={{rotateY:0}}
         animate={controls}
         transition={{duration:1.2}}
