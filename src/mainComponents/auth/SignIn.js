@@ -55,16 +55,20 @@ const SignIn = () => {
 
 
   return (
-    <div>
+    <div className=" h-full w-full flex flex-col justify-center items-center">
       {!isPasswordReset ?
-      <div>
-      <label >email</label>
-      <input  onChange={handleEmailChange} value ={emailAddress}/>
-      <label>password</label>
-      <input type="password" onChange={handlePasswordChange} value ={userPassword}/>
-      <p onClick={handleIsPasswordReset}>I Forgot My Password</p>
+      <div className=" h-full w-full flex flex-col justify-center  items-center gap-1">
+     <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
+     <label className="text-xl text-gray-800 font-light" >Email</label>
+      <input className="w-full p-2 outline-none border-none rounded-md text-lg text-gray-800"  onChange={handleEmailChange} value ={emailAddress}/>
+     </div>
+     <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
+     <label className="text-xl text-gray-800 font-light">Password</label>
+      <input className="w-full p-2 outline-none border-none rounded-md text-lg text-gray-800" type="password" onChange={handlePasswordChange} value ={userPassword}/>
+      <p className="text-xs text-gray-800 font font-light" onClick={handleIsPasswordReset}>I Forgot My Password</p>
+     </div>
       {error && <p  className="text-xxl">{error}</p>}
-      <button onClick={handleSignIn}>sign in</button>
+      <button className='text-2xl text-white font-light  bg-blue-700 p-2 w-full hover:scale-105 hover:bg-blue-600 transition' onClick={handleSignIn}>sign in</button>
       </div>
       :
       <ResetPassword SetIsPasswordReset={setIsPasswordReset}/> }

@@ -33,7 +33,7 @@ const MainApp = () => {
          menuToggle={menuToggle}
          setMenuToggle={setMenuToggle}
          setAnimantionCompleated={setAnimantionCompleated}/>
-         <div className="h-full relative flex-1 bg-slate-500">
+         <div className="h-full relative flex-1 bg-backgroundColorPrimary ">
         <Routes>
         <Route path='/' Component={HomePage}/>
         <Route path='/app' Component={App}/>

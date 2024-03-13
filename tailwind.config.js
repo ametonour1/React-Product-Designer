@@ -24,6 +24,7 @@ module.exports = {
         '4xl': '2.25rem',   // 4 times large
         '5xl': '3rem',      // 5 times large
         '6xl': '4rem',      // 6 times large
+        "7xl": "5rem"       // 7 times large
       },
       fontWeight: {
         'hairline': 100,

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import HeroComponent from './HeroComponent'
+import InfoComponent from './InfoComponent'
+import Brands from './Brands'
 
 const HomePage = () => {
   const activeUser = useSelector((state) => state.auth.user)
@@ -12,7 +14,8 @@ const HomePage = () => {
   return (
     <div className=" bg-backgroundColorPrimary relative h-full flex-1">
     <HeroComponent/>
-    <p>helloo</p>
+    <InfoComponent/>
+    <Brands/>
     </div>
   )
 }

@@ -9,11 +9,17 @@ import {motion} from "framer-motion"
 
 const HeroComponent = () => {
   return (
-    <div className="flex lg:h-full flex-col-reverse  md:flex-row sm:flex-row lg:flex-row ">
+    <div className="flex lg:h-full flex-col-reverse  md:flex-row sm:flex-row lg:flex-row bg-inherit ">
     <motion.div 
     initial={{x:-50,opacity:0.5}}
     animate={{x:0,opacity:1,
-    transition:{duration:1}}}
+    transition:{
+      type:"spring",
+            duration:0.2,
+            damping:8,
+            delay:0.3,
+            stiffness:100
+    }}}
     
     className='flex-1 flex flex-col justify-center items-center sm:items-start  lg:items-center  gap-2 ml-1 mr-1'>
         <h1 className="text-4xl sm:text-4xl md:text-6xl font-normal font-mono text-textBaseColor ">Your Design</h1>
