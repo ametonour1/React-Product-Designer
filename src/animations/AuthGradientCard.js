@@ -1,7 +1,7 @@
 import React,{useRef,useEffect} from "react"
 import {motion,useAnimation} from "framer-motion"
-import "../App.css"
-const AuthCardSubAnimation = ({children , isSignIn}) => {
+
+const AuthGradientCard = ({children , isSignIn}) => {
   
 
     const controls = useAnimation()
@@ -10,7 +10,7 @@ const AuthCardSubAnimation = ({children , isSignIn}) => {
         if (!initialRender.current) {
             controls.start({rotateY: !isSignIn ? 180 : 0,
                 translateY: [0,20,0],
-                opacity: !isSignIn ? [1, 0.8, 0.5, 0, 0, 0.5, 0.7, 1] : 1})
+                opacity: !isSignIn ? [0.75, 0.5, 0, 0, 0, 0, 0.5, 0.75] : 0.75})
         
         }else {
             initialRender.current = false
@@ -27,8 +27,8 @@ const AuthCardSubAnimation = ({children , isSignIn}) => {
             perspective: "1000px", // Add perspective
             perspectiveOrigin: "50% 50%" // Adjust perspective origin
         }}
-        id="signUpCard"
-        className=" h-full w-full p-10 z-10 relative  flex flex-col items-center gap-1 rounded-xl bg-gray-100 shadow-xl shadow-gray-500 "
+        id="signUpGradient"
+        className=" inset-4  bg-gradient-to-r from-textGradientPrimary via-textGradientSecondary to-textGradientThird absolute rounded-lg z-0 opacity-75  blur-xl"
         initial={{rotateY:0,
         translateY:20}}
         animate={controls}
@@ -38,4 +38,4 @@ const AuthCardSubAnimation = ({children , isSignIn}) => {
         </motion.div>
     )
 }
-export default AuthCardSubAnimation
+export default AuthGradientCard

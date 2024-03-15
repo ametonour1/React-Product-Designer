@@ -298,7 +298,7 @@ if (isSnapping) {
   
 
   return (
-    <div className="App">
+    <div id='AppId' className="App">
      <div className='mainDiv'>
         <img className='tShirt' src={TSHIRT} alt="tshirt"/>
       <div className='canvasDiv'>

@@ -16,7 +16,7 @@ const AuthResetAnimation = ({children,isPasswordReset}) => {
     },[isPasswordReset])
     return(
         <motion.div
-        className=" h-full w-full flex flex-col justify-center  items-center gap-1"
+        className=" h-full w-full flex flex-col justify-center items-center gap-5"
         initial={{traslateY:20}}
         animate={controls}
         transition={{duration:1}}

@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce'
 
 const ImageFilters = ({canvas,initializeCanvasToLocal}) => {
   const backgroundColor = "rgb(240, 240, 247)"
-  const highLightColor = "rgb(3, 252, 248)"
+  const highLightColor = "rgb(212, 44, 149, 1)"
     const [filtersEnabled,setFiltersEnabled] = useState({Grayscale:false,Sepia:false })
     const [removeAllFilters, setRemoveAllFilters] = useState(false)
     const [sliderValue,setSliderValue] = useState({
@@ -311,7 +311,7 @@ const ImageFilters = ({canvas,initializeCanvasToLocal}) => {
             borderColor:highLightColor,
             
           }} 
-           className='blur'  step="0.01" value={sliderValue.blur} min={0} max={0.65} onChange={(value)=> handleSliderStateChange("blur",value)} onAfterChange ={(value) => handleSliderChange("Blur","blur",value)}/>
+           className='blurfil'  step="0.01" value={sliderValue.blur} min={0} max={0.65} onChange={(value)=> handleSliderStateChange("blur",value)} onAfterChange ={(value) => handleSliderChange("Blur","blur",value)}/>
         <p className="sliderP">Blur:{sliderValue.blur}</p>
         </div>
         <div className='sliderDiv'>

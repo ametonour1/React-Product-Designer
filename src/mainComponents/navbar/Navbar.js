@@ -14,7 +14,7 @@ const Navbar = ({
     console.log(menuToggle)
   }
   return (
-    <div className=" bg-backgroundColorPrimary lg:bg-backgroundColorPrimary flex flex-row items-center justify-between h-12"   >
+    <div className=" bg-backgroundColorSecondary sm:bg-backgroundColorPrimary flex flex-row items-center justify-between h-12"   >
       <div className="lg:hidden">
         <MenuIcon fontSize='large' onClick={handleMenuToggle}/>
       </div>

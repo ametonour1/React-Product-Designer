@@ -36,7 +36,7 @@ const ResetPassword = ({
          <label  className="text-xl text-textBaseColor font-bold" >Email Address</label>
       <input placeholder='example@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" onChange={handleEmailChange} value ={emailAddress}/>
       <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition'  onClick={handlePasswordReset} >Reset Password</button>
-   {error && <p>{error}</p>}
+   {error && <p className='text-lg text-red-600'>{error}</p>}
     </div>
   )
 }

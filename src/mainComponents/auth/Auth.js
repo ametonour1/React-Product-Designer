@@ -3,6 +3,7 @@ import SignUp from './SignUp'
 import SignIn from './SignIn'
 import AuthCardAnimation from '../../animations/AuthCardAnimation'
 import AuthCardSubAnimation from '../../animations/AuthCardSubAnimation'
+import AuthGradientCard from '../../animations/AuthGradientCard'
 import AuthTitleAnimation from '../../animations/AuthTitleAnimation'
 const Auth = () => {
 
@@ -24,13 +25,13 @@ const Auth = () => {
   return (
     <div className='h-full' >
       <div className='flex flex-col-reverse h-full xl:flex-row-reverse '>
-        <div className="flex-1  flex     ">
+        <div className="flex-1  flex relative   ">
           <AuthCardAnimation isSignIn={isSignIn}>
         {
       awaitAnimation
        ? <AuthCardSubAnimation isSignIn={isSignIn}  >
        <SignIn isSignIn={isSignIn} setIsSignIn={setIsSignIn}/> 
-       <p className="text-sm font-light text-textBaseColor hover:text-black transition " onClick={handleSignInFalse}>Dont have an account? sign Up</p>
+       <p className="text-sm font-light text-textBaseColor hover:text-black transition z-10 " onClick={handleSignInFalse}>Dont have an account? sign Up</p>
        </AuthCardSubAnimation>
       :
       <AuthCardSubAnimation isSignIn={isSignIn}>
@@ -38,7 +39,11 @@ const Auth = () => {
       <p className="text-sm font-light text-textBaseColor hover:text-black transition " onClick={handleSignInTrue}>Already have an account? sign In</p>
        </AuthCardSubAnimation>
        }
+       <AuthGradientCard isSignIn={isSignIn}>
+       <div className=' '></div>
+       </AuthGradientCard>
        </AuthCardAnimation>
+
         </div>
         <div   className=" bg-backgroundColorPrimary flex flex-col sm:flex-1 gap-2 pt-8 justify-center items-center ">
           {awaitAnimation ? 

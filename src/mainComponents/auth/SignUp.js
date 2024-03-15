@@ -113,20 +113,30 @@ const SignUp = () => {
     }
   },[signUpCompleated,userVerified])
 
+  useEffect(()=>{
+    const timeout = setTimeout(() => {
+      setError(null);
+      console.log("useEffectRan")
+    }, 5000);
+  
+   
+    return () => clearTimeout(timeout);
+  },[error])
+
   return (
     <div className="h-full w-full">
       {!signUpCompleated 
       ?
-       <div className="h-full w-full flex flex-col justify-around items-center gap-1">
+       <div className="h-full w-full flex flex-col justify-center items-center gap-5">
          <label className="text-xl text-textBaseColor font-bold" >Email</label>
       <input  placeholder='example@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" onChange={handleEmailChange} value ={emailAddress}/>
       <label className="text-xl text-textBaseColor font-bold">Password</label>
       <input placeholder='!1234:)' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" type="password" onChange={handlePasswordChange} value ={userPassword}/>
       <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition'  onClick={handleSignUp}>Sign Up</button>
-      {error && <p  className="text-xxl">{error}</p>}
+      {error && <p  className="text-lg text-red-600">{error}</p>}
       </div> 
       : 
-      <p>
+      <p className="justify-center items-center text-xl text-textBaseColor">
         verifcation Email has been sent 
       </p>}
      

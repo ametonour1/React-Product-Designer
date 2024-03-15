@@ -7,7 +7,7 @@ const TextControlSliders = ({canvas, fontSize,setFontSize,fontWeight,setFontWeig
 
 
   const backgroundColor = "rgb(240, 240, 247)"
-  const highLightColor = "rgb(3, 252, 248)"
+  const highLightColor = "rgb(212, 44, 149, 1"
     const fontSizeChange = debounce ((type,value)=>{
         if (canvas) {
           const selectedObject = canvas.getActiveObject()

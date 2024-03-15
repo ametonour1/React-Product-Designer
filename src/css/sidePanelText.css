@@ -1,12 +1,16 @@
+
 :root {
-    --backgroundWhite:rgb(240, 240, 247);
-    --backgroundDarkGray:rgb(25, 26, 26);
-    --backgroundLightGray:rgb(28, 37, 35);
-    --highlightPrimary:rgb(3, 252, 248);
-    --highlightSecondary:rgb(14, 13, 13);
+    --backgroundWhite:rgb(242, 238, 243, 1);
+    --backgroundDarkGray:rgb(10, 9, 10, 1);
+    --backgroundLightGray:rgb(40, 39, 41, 1);
+    --highlightPrimary:rgb(212, 44, 149, 1);
+    --highlightSecondary:rgb(0, 0, 0);
     --fontSizePrimary:1.5rem;
     --fontSizeSecondary:1.2rem;
 }
+
+
+
 
 .sidePanelText {
     background-color: var(--backgroundLightGray);
@@ -15,6 +19,8 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    
+   
 }
 .textControlSlidersDiv{
     width: 100%;
@@ -85,10 +91,10 @@
 .uniformButtonActive:hover{
     scale: 1.005;
     transition: ease-in 2ms;
-    background-color:rgb(40, 255, 255)
+    background-color:var(--highlightPrimary)
 }
 .uniformButtonInactive {
-    background-color: aqua;
+    background-color: var(--highlightPrimary);
     font-size: 1rem;
   
    width: 100%;

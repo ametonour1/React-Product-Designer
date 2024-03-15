@@ -17,9 +17,9 @@ const InfoComponent = () => {
 
     },[isInview])
   return (
-    <motion.div  className="flex flex-col  gap-10 pl-5 pr-5 pt-32 pb-32 sm:pl-16 sm:pr-16 lg:flex-row lg:pl-2 lg:pr-2 justify-center items-baseline bg-inherit ">
+    <motion.div  className="flex flex-col  gap-10 pl-5 pr-5 pt-32 pb-32 sm:pl-16 sm:pr-16 lg:flex-row lg:pl-2 lg:pr-2 justify-center items-baseline bg-inherit">
        <InfoAnimationWrapper>
-        <div className='flex flex-1 h-full  flex-col justify-evenly gap-3 mt-3  '>
+        <div className='flex flex-1 h-full  flex-col justify-evenly gap-3 mt-3   '>
             <div className="text-7xl flex justify-center items-center gap-3">
                 <LocalShippingIcon fontSize='inherit' sx={{color:grey[800]}} />
                 <h2 className="text-2xl font-bold text-textBaseColor  md:text-xl">Fast Delivery</h2>
@@ -28,7 +28,7 @@ const InfoComponent = () => {
         </div>
         </InfoAnimationWrapper>
         <InfoAnimationWrapper>
-        <div className='flex flex-1 h-full   flex-col justify-evenly gap-3 mt-3  '>
+        <div className='flex flex-1  h-full  flex-col justify-evenly gap-3 mt-3   '>
             <div className="text-7xl flex justify-center items-center gap-3">
                 <PaymentsIcon fontSize='inherit' sx={{color:grey[800]}}/>
                 <h2 className="text-2xl font-bold text-textBaseColor md:text-xl">Secure Payments</h2>
@@ -37,7 +37,7 @@ const InfoComponent = () => {
         </div>
         </InfoAnimationWrapper>
         <InfoAnimationWrapper>
-        <div className='flex flex-1 h-full  flex-col justify-evenly gap-3  mt-3'>
+        <div className='flex flex-1  h-full flex-col justify-evenly gap-3  mt-3 '>
             <div className="text-7xl flex justify-center items-center gap-3">
                 <WorkspacePremiumIcon fontSize='inherit'  sx={{color:grey[800]}}/>
                 <h2 className="text-2xl font-bold text-textBaseColor md:text-xl">Quality Products</h2>

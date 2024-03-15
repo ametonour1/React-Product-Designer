@@ -31,7 +31,7 @@ const InfoAnimationWrapper = ({children}) => {
         }}
         initial="hidden"
         animate={controls}
-        className="flex-1 h-full flex items-center "
+        className="flex-1 h-full flex items-center  "
         >
             {children}'
         </motion.div>

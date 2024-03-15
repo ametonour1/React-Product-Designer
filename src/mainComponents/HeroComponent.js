@@ -6,6 +6,7 @@ import PHOTO4 from "../assets/img4.png"
 import TSHIRT from "../assets/tshirt.png"
 import "../App.css"
 import {motion} from "framer-motion"
+import { Link } from 'react-router-dom'
 
 const HeroComponent = () => {
   return (
@@ -24,10 +25,10 @@ const HeroComponent = () => {
     className='flex-1 flex flex-col justify-center items-center sm:items-start  lg:items-center  gap-2 ml-1 mr-1'>
         <h1 className=" text-5xl text-center sm:text-6xl md:text-8xl xl:text-9xl  bg-gradient-to-r from-textGradientPrimary via-textGradientSecondary to-textGradientThird text-transparent bg-clip-text font-black ">Your Design</h1>
         <h3 className="font-normal text-textBaseColor  ">Design Amazing Custom Products For Your Bussiness With Ease</h3>
-        <button className="bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary text-xl p-2 pl-3 pr-3 rounded-lg font-bold hover:bg-blue-600 transition hover:scale-105 text-white shadow-md shadow-gray-300">Start Now</button>
+        <button className="bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary text-xl p-2 pl-3 pr-3 rounded-lg font-bold hover:bg-blue-600 transition hover:scale-105 text-white shadow-md shadow-gray-300"><Link to="/app">Start Now</Link></button>
     </motion.div>
      <div id='divm' className=" flex-1 grid grid-cols-12 grid-rows-12 h-full ">
-        <img id='divt' className=" row-start-1 row-end-13 col-end-13 col-start-1  lg:h-full flex-1  z-10   " src={TSHIRT}/>
+        <img id='divt' className=" row-start-1 row-end-13 col-end-13 col-start-1  lg:h-full flex-1  z-10 filter drop-shadow-2xl   " src={TSHIRT}/>
         <motion.div
         animate={{
           x: [0,15, 10, 0],

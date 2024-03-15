@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { signInUserWithEmailAndPassword} from '../../firebase/firebaseAuth'
 import ResetPassword from './ResetPassword'
 import { useDispatch } from 'react-redux'
@@ -58,21 +58,30 @@ const SignIn = () => {
         },300)
       }
 
+      useEffect(()=>{
+        const timeout = setTimeout(() => {
+          setError(null);
+          console.log("useEffectRan")
+        }, 5000);
+      
+       
+        return () => clearTimeout(timeout);
+      },[error])
 
   return (
-    <div className=" h-full w-full flex flex-col justify-center items-center">
+    <div className=" h-full w-full flex   flex-col z-10 justify-center  items-center">
       {!awaitPasswordReset ?
       <AuthResetAnimation isPasswordReset={isPasswordReset} >
-     <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
+     <div className=" w-full  flex flex-col  items-center gap-2">
      <label className="text-xl text-textBaseColor font-bold" >Email</label>
       <input placeholder='examle@email.com' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor"  onChange={handleEmailChange} value ={emailAddress}/>
      </div>
-     <div className=" w-full h-full flex flex-col justify-center  items-center gap-2">
+     <div className=" w-full  flex flex-col  items-center gap-2">
      <label className="text-xl text-textBaseColor font-bold">Password</label>
       <input placeholder='!1234:)' className="w-full bg-backgroundColorPrimary p-2 outline-none border-none rounded-md text-lg text-textBaseColor" type="password" onChange={handlePasswordChange} value ={userPassword}/>
       <p className="text-xs text-textBaseColor font font-light" onClick={handleIsPasswordReset}>I Forgot My Password</p>
      </div>
-      {error && <p  className="text-xxl">{error}</p>}
+      {error && <p  className="text-lg text-red-700">{error}</p>}
       <button className='text-2xl text-white font-bold rounded-lg  bg-gradient-to-b from-textGradientPrimary  to-textGradientSecondary  p-2 w-full hover:scale-105  transition' onClick={handleSignIn}>sign in</button>
       </AuthResetAnimation>
       :
