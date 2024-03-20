@@ -1,9 +1,10 @@
 import fireBaseApp from "./firebase"
 import "firebase/auth"
 
+import { getFirestore , collection,addDoc ,doc,setDoc} from "firebase/firestore";
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,sendEmailVerification, deleteUser,setPersistence,browserLocalPersistence,signOut} from "firebase/auth";
 const auth = getAuth()
-
+const firestore = getFirestore(fireBaseApp)
 export const signUpWithEmailAndPassword = async (email,password) =>{
     try {
         await setPersistence(auth,browserLocalPersistence)
@@ -65,4 +66,33 @@ export const deleteUnVerifedUser = async (signInUser) => {
     }
 }
 
+export const registerUserToFirestore = async (user,displayName,phoneNumber,street,city,country,zipCode) => {
 
+    try{
+    //const docRef = collection(firestore,"users")
+    const userData = {
+        displayName:displayName,
+        phoneNumber:phoneNumber,
+        emailAddress:user.email,
+        Address:{
+            city:city,
+            country:country,
+            street:street,
+            zipCode:zipCode
+        },
+        userID:user.uid
+    }
+    const id = user.uid
+    //const myDoc = doc(docRef,id)
+   setDoc(doc(firestore,"users",id),userData)
+  .then(() => {
+    console.log('Document successfully written!');
+  })
+  .catch((error) => {
+    console.error('Error writing document: ', error);
+  });
+    }catch(error) {
+        console.log(error)
+    }
+    
+}
