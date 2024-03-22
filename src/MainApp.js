@@ -6,6 +6,7 @@ import Navbar from './mainComponents/navbar/Navbar'
 import NavbarMenu from './mainComponents/navbar/NavbarMenu'
 import CheckOut from "./mainComponents/Checkout/CheckOut"
 import Shop from "./mainComponents/shop/Shop"
+import AdminPage from "./mainComponents/adminPage/AdminPage"
 import "./tailwind.css"
 import {motion} from "framer-motion"
 import Auth from './mainComponents/auth/Auth'
@@ -36,6 +37,7 @@ const MainApp = () => {
          <div className="h-full relative flex-1 bg-backgroundColorPrimary ">
         <Routes>
         <Route path='/' Component={HomePage}/>
+        <Route path='/admin' Component={AdminPage}/>
         <Route path='/app' Component={App}/>
         <Route path='/shop' Component={Shop}/>
         <Route path='/signin' Component={Auth}/>

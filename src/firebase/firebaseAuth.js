@@ -1,7 +1,7 @@
 import fireBaseApp from "./firebase"
 import "firebase/auth"
 
-import { getFirestore , collection,addDoc ,doc,setDoc} from "firebase/firestore";
+import { getFirestore , collection,addDoc ,doc,setDoc, deleteDoc} from "firebase/firestore";
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,sendEmailVerification, deleteUser,setPersistence,browserLocalPersistence,signOut} from "firebase/auth";
 const auth = getAuth()
 const firestore = getFirestore(fireBaseApp)
@@ -95,4 +95,16 @@ export const registerUserToFirestore = async (user,displayName,phoneNumber,stree
         console.log(error)
     }
     
+}
+
+export const removeRegisteredUser = async (id) => {
+
+    try{
+        const docRef = doc(firestore,"users",id)
+        await deleteDoc(docRef)
+        console.log("document deleted successfully:",id)
+    }catch(error) {
+        console.error("error deleting document",error)
+    }
+
 }

@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { signUpWithEmailAndPassword, signInUserWithEmailAndPassword,deleteUnVerifedUser,registerUserToFirestore } from '../../firebase/firebaseAuth'
+import { signUpWithEmailAndPassword, signInUserWithEmailAndPassword,deleteUnVerifedUser,registerUserToFirestore, removeRegisteredUser } from '../../firebase/firebaseAuth'
 import {useNavigate} from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 import {setTestReducerData} from "../../redux/actions/testAction.js"
@@ -71,7 +71,6 @@ const SignUp = () => {
         const user = await signUpWithEmailAndPassword(emailAddress,userPassword)
         
         setSignUpCompleated(true)
-        const registerUser = await registerUserToFirestore(user,displayName,phoneNumber,street,city,country,zipCode)
       }else {
         setError("Contact Details Are Missing")
       }
@@ -117,6 +116,7 @@ const SignUp = () => {
         console.log(signInUser)
         if (signInUser.emailVerified) {
           console.log("userVerifed")
+        const registerUser = await registerUserToFirestore(signInUser,displayName,phoneNumber,street,city,country,zipCode)
           SetUserVerified(true)
           dispatch(login(signInUser))
         }else{

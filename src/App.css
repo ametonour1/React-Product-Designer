@@ -49,6 +49,7 @@
     margin-left: 2%;
     margin-right: 2%;
     margin-bottom: 2%;
+   
  
     
     
@@ -58,7 +59,7 @@ canvas {
   
 }
 .canvasSubDiv{
-
+    border: solid red 2px;
     display: flex;
     justify-content: center;
     padding-top: 20%;
@@ -74,6 +75,7 @@ canvas {
     display: flex;
     flex-direction: column;
    width: 100%;
+   
    
 }
 .taskBarDiv{
@@ -98,7 +100,7 @@ canvas {
   
     flex-direction: row;
     height: inherit;
-    width: auto;
+    width:auto;
     
    }
    .tShirt{
