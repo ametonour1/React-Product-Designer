@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AdminAddProduct from './AdminAddProduct'
 import AdminCanvas from './AdminCanvas'
 import AdminCanvasSliders from './AdminCanvasSliders'
+import { addProductToFirestore,fetchProductsFromFirestore, fetchProductCategories } from '../../firebase/firebaseAuth'
 const AdminPage = () => {
 
   const [productName,setProductName] = useState(null)
@@ -51,7 +52,9 @@ const AdminPage = () => {
         setAdminCanvasPaddingTop={setAdminCanvasPaddingTop}
         setAdminCanvasPaddingLeft={setAdminCanvasPaddingLeft}
         />
-        
+        <button onClick={()=>addProductToFirestore(productName,productCategory,productDescription,productImage,productPrice,adminCanvasHeight,adminCanvasWidth,adminCanvasPaddingLeft,adminCanvasPaddingTop)} >Add Product</button>
+        <button className="bg-red-600" onClick={fetchProductsFromFirestore}>test</button>
+        <button className="bg-red-600" onClick={fetchProductCategories}>fetch categoryes</button>
         </div>
         
     </div>

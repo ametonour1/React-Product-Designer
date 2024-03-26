@@ -53,7 +53,7 @@ const AdminAddProduct = ({
         </div>
         <div>
             <label>Price</label>
-            <input onChange={handleProductPriceChange} value={productPrice}/>
+            <input type="number" onChange={handleProductPriceChange} value={productPrice}/>
         </div>
         <div>
             <label>Description</label>

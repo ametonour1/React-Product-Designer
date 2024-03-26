@@ -1,7 +1,7 @@
 import fireBaseApp from "./firebase"
 import "firebase/auth"
 
-import { getFirestore , collection,addDoc ,doc,setDoc, deleteDoc} from "firebase/firestore";
+import { getFirestore , collection,addDoc ,doc,setDoc, deleteDoc, serverTimestamp,getDocs,query,where} from "firebase/firestore";
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail,sendEmailVerification, deleteUser,setPersistence,browserLocalPersistence,signOut} from "firebase/auth";
 const auth = getAuth()
 const firestore = getFirestore(fireBaseApp)
@@ -107,4 +107,68 @@ export const removeRegisteredUser = async (id) => {
         console.error("error deleting document",error)
     }
 
+}
+
+export const addProductToFirestore = async (productName,productCategory,productDescription,productImage,productPrice,adminCanvasHeight,adminCanvasWidth,adminCanvasPaddingLeft,adminCanvasPaddingTop) => {
+
+   // console.log(productName,productCategory,productDescription,productPrice,productImage,adminCanvasHeight,adminCanvasWidth,adminCanvasPaddingLeft,adminCanvasPaddingTop,"errrrr")
+
+   try{
+    
+    const timestamp = serverTimestamp()
+    const price =  parseFloat(productPrice)
+   const productData = {
+    productName:productName,
+    productPrice:price,
+    productCategory:productCategory,
+    productDescription:productDescription,
+    productImage:productImage,
+    adminCanvasHeight:adminCanvasHeight,
+    adminCanvasWidth:adminCanvasWidth,
+    adminCanvasPaddingTop:adminCanvasPaddingTop,
+    adminCanvasPaddingLeft:adminCanvasPaddingLeft,
+    creadtedAt:timestamp,
+    updatedAt:timestamp
+    
+   }
+
+   const docRef = await addDoc(collection(firestore,"products"),productData)
+   console.log("document written id:",docRef.id)
+   }catch(error){
+    console.error(error)
+   }
+   
+}
+
+export const fetchProductCategories = async () => {
+    try{
+
+        const q = query(collection(firestore,"products"),where("productCategory"))
+
+        const querySnapshot = await getDocs(q)
+            
+            querySnapshot.forEach((doc)=>{
+                console.log(doc.id, " => ", doc.data())
+            })
+            
+    }catch(error){
+        console.error(error)
+    }
+   
+}
+
+export const fetchProductsFromFirestore = async () => {
+
+    try{
+
+        const q = query(collection(firestore,"products"), where("productPrice",">",0))
+      
+        const querySnapshot = await getDocs(q)
+        console.log("brrrrrrrrrrrr",querySnapshot)
+        querySnapshot.forEach((doc)=>{
+            console.log(doc.id, " => ", doc.data())
+        })
+    }catch(error) {
+        console.error(error)
+    }
 }
