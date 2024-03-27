@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ShopControls from './ShopControls'
+import ShopProducts from './ShopProducts'
 
 const Shop = () => {
+  const [shopItems,setShopItems] = useState(null)
   return (
-    <div className="relative w-64 m-10 flex justify-center items-center">
-      <div className=" bg-gradient-to-b from-red-400 via-purple-500 to-blue-300 absolute  -inset-2 blur opacity-75 rounded-lg" ></div>
-      <div className="bg-gray-900 h-64 w-64 relative flex rounded-lg "></div>
+    <div className="h-full flex bg-red-300">
+      <ShopControls 
+      setShopItems={setShopItems}/>
+      <ShopProducts
+      shopItems={shopItems}
+      />
     </div>
   )
 }

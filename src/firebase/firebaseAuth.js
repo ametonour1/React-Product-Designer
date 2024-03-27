@@ -142,32 +142,42 @@ export const addProductToFirestore = async (productName,productCategory,productD
 
 export const fetchProductCategories = async () => {
     try{
-
-        const q = query(collection(firestore,"products"),where("productCategory"))
+        let array = []
+        const q = query(collection(firestore,"categories"))
 
         const querySnapshot = await getDocs(q)
             
             querySnapshot.forEach((doc)=>{
-                console.log(doc.id, " => ", doc.data())
+                //console.log(doc.id, " => ", doc.data())
+                array.push({id:doc.id, ...doc.data()})
             })
-            
+        return array
     }catch(error){
         console.error(error)
     }
    
 }
 
-export const fetchProductsFromFirestore = async () => {
+export const fetchProductsFromFirestore = async (productCategories) => {
 
     try{
-
-        const q = query(collection(firestore,"products"), where("productPrice",">",0))
+        let array = []
+        let q = query(collection(firestore,"products"), where("productPrice",">",0))
       
+
+        if (productCategories === "All Products") {
+            console.log("all categories selected")
+        }else{
+            q = query(q,where("productCategory","==",productCategories))
+        }
         const querySnapshot = await getDocs(q)
-        console.log("brrrrrrrrrrrr",querySnapshot)
+        console.log("brrrrrrrrrrrr fetching produtcs",querySnapshot)
         querySnapshot.forEach((doc)=>{
             console.log(doc.id, " => ", doc.data())
+            array.push({id:doc.id, ...doc.data()})
+
         })
+        return array
     }catch(error) {
         console.error(error)
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import AdminCategories from './AdminCategories'
 
 const AdminAddProduct = ({
     setProductName,
@@ -25,6 +26,7 @@ const AdminAddProduct = ({
     }
     const handleProductDescriptionChange = (e) =>{
         setProductDescription(e.target.value)
+        
     }
     const handleProductImageChange = (e) =>{
         const file = e.target.files[0];
@@ -48,8 +50,10 @@ const AdminAddProduct = ({
             <input onChange={handleProductNameChange} value={productName}/>
         </div>
         <div>
-            <label>Category</label>
-            <input onChange={handleProductCategoryChange} value={productCategory} />
+            <AdminCategories 
+            productCategory={productCategory}
+             setProductCategory={setProductCategory}/>
+            
         </div>
         <div>
             <label>Price</label>
